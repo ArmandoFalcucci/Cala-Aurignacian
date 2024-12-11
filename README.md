@@ -1,6 +1,6 @@
 ## Research Compendium for 'Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala (southern Campania)'
 
-### Compendium DOI (update):
+### Compendium DOI:
 
 _add after first round of review_
 

@@ -1,8 +1,6 @@
-## Research Compendium for 'Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala (southern Campania)'
+## Research Compendium for 'Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala'
 
 ### Compendium DOI:
-
-_add after first round of review_
 
 The content available at the provided Zenodo DOI reproduces the results as documented in the publication. The files hosted at <https://github.com/ArmandoFalcucci/Grotta-Della-Cala-Aurignacian> represent the developmental versions and might have undergone modifications since the paper's publication.
 
@@ -12,7 +10,7 @@ The content available at the provided Zenodo DOI reproduces the results as docum
 
 ### Published Paper:
 
-**Armando Falcucci, Keiko Kitagawa, Luc Doyon, Laura Tassoni, Tom Higham, Clarissa Domenici, Diego Dreossi, Jacopo Crezzini, Matteo Rossini, Stefano Benazzi, Ivan Martini, Francesco Boschin, Vincenzo Spagnolo, Adriana Moroni.** *Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala (southern Campania).* _Journal Name, Volume Number, Page Numbers_ (in preparation). DOI: [Insert DOI]
+**Armando Falcucci, Keiko Kitagawa, Luc Doyon, Laura Tassoni, Tom Higham, Clarissa Domenici, Diego Dreossi, Jacopo Crezzini, Matteo Rossini, Stefano Benazzi, Ivan Martini, Francesco Boschin, Vincenzo Spagnolo, Adriana Moroni.** *Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala.* _Journal Name, Volume Number, Page Numbers_ (in preparation). DOI: [Insert DOI]
 
 ### Abstract:
 
@@ -20,7 +18,7 @@ Grotta della Cala (Marina di Camerota, southern Italy) is a key archaeological s
 
 ### Keywords:
 
-Early Upper Paleolithic; *Homo sapiens*; MIS3; Henrich Stadial 4; Lithic Technology; Osseous Technology; Malacology; OSL and Radiocarbon Dating; Human Behavior.
+Early Upper Paleolithic; Henrich Stadial 4; Campanian Ignimbrite; Lithic Technology; Osseous Technology; Malacology; OSL and Radiocarbon Dating.
 
 ### Overview of Contents and How to Reproduce:
 
@@ -40,5 +38,5 @@ For consistent results, the `renv` package (v. 1.0.3) was used, following the pr
 
 ## Licenses:
 
-- **Code**: MIT License ([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)), copyright holder: **Armando Falcucci** (2024).
-- **Data and Intellectual Work**: Creative Commons Attribution 4.0 International License ([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)), copyright holder: the authors (2024).
+- **Code**: MIT License ([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)), copyright holder: **Armando Falcucci** (2025).
+- **Data and Intellectual Work**: Creative Commons Attribution 4.0 International License ([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)), copyright holder: the authors (2025).

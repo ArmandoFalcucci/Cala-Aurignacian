@@ -1,8 +1,9 @@
 ---
-title: "Tables and figures for the paper 'CALA'"
+title: Tables and figures
+subtitle: "Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala"
 author: 
-- Armando Falcucci, Keiko Kitagawa, Vincenzo Spagnolo, ..., Adriana Moroni
-- armando.falcucci@uni-tuebingen.de (corresponding author)
+- Armando Falcucci, Keiko Kitagawa, Luc Doyon, Laura Tassoni, Tom Higham, Clarissa Dominici, Diego Dreossi, Jacopo Crezzini, Matteo Rossini, Stefano Benazzi, Ivan Martini, Francesco Boschin, Vincenzo Spagnolo, Adriana Moroni
+- armando.falcucci@uni-tuebingen.de & vincenzo.spagnolo@unisi.it (corresponding authors)
 date: ''
 knit: (function(input, ...) {
     rmarkdown::render(

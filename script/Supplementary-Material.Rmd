@@ -1,6 +1,9 @@
 ---
 title: Supplementary Material (SM)
-subtitle: "Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala (southern Campania)"
+subtitle: "Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala"
+author:
+- Armando Falcucci, Keiko Kitagawa, Luc Doyon, Laura Tassoni, Tom Higham, Clarissa Dominici, Diego Dreossi, Jacopo Crezzini, Matteo Rossini, Stefano Benazzi, Ivan Martini, Francesco Boschin, Vincenzo Spagnolo, Adriana Moroni
+- armando.falcucci@uni-tuebingen.de & vincenzo.spagnolo@unisi.it (corresponding authors)
 knit: (function(input, ...) {
     rmarkdown::render(
       input,
@@ -170,15 +173,25 @@ knitr::include_graphics("../output/figures/Figure_S6.png")
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
 knitr::include_graphics("../output/figures/Figure_S7.png")
 ```
-  **Figure S7.** Examples of retouched tools from spits AU13–AU10. (**a**) Endscraper on blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**b**) Endscraper on flake with stepped bilateral retouch (i.e., Aurignacian retouch); (**c**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**d**) Carinated endscraper on a semi-cortical flake with stepped unilateral retouch; (**e**) Blade with discontinuous bilateral retouch; (**f**) Endscraper on a semi-cortical blade; (**g**) Semi-cortical flake with bilateral retouch; (**h**) Burin on truncation; (**i**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). Artifact distribution by spit is as follows: (**f**) from AU10; (**c**) and (**h**) from AU11; (**a**), (**b**), (**d**), and (**e**) from AU12; and (**g**) and (**i**) from AU13. The numbers shown after each letter correspond to the dataset created by AF, where each artifact is prefixed with “Ca”.
+  **Figure S7.** Examples of retouched tools from spits AU13–AU10. (**a**) Endscraper on blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**b**) Endscraper on flake with stepped bilateral retouch (i.e., Aurignacian retouch); (**c**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**d**) Carinated endscraper on a semi-cortical flake with stepped unilateral retouch; (**e**) Blade with discontinuous bilateral retouch; (**f**) Endscraper on a semi-cortical blade; (**g**) Semi-cortical flake with bilateral retouch; (**h**) Burin on truncation; (**i**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). Artifact distribution by spit is as follows: (**f**) from AU10; (**c**) and (**h**) from AU11; (**a**), (**b**), (**d**), and (**e**) from AU12; and (**g**) and (**i**) from AU13. The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_126; **b** = Ca_125; **c** = Ca_163; **d** = Ca_123; **e** = Ca_164; **f** = Ca_132; **g** = Ca_373; **h** = Ca_371; and **i** = Ca_167.
 
 ### Figure S8
 ```{r, echo=FALSE, fig.align='center', out.width="80%"}
 knitr::include_graphics("../output/figures/Figure_S8.png")
 ```
-  **Figure S8.** Examples of burin cores. (**a**) Carinated burin from AU13; (**b**) Carinated burin from AU12; (**c**) Multiple burin from AU11. The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The artifact identifiers shown after each letter correspond to the dataset created by AF, with the prefix “Ca” (the site’s standard acronym).
+  **Figure S8.** Examples of burin cores. (**a**) Carinated burin from AU13; (**b**) Carinated burin from AU12; (**c**) Multiple burin from AU11. The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_361; **b** = Ca_362; **c** = Ca_360.
+
+<br>
 
 ### Figure S9
+```{r, echo=FALSE, fig.align='center', out.width="80%"}
+knitr::include_graphics("../output/figures/Figure_S9.png")
+```
+  **Figure S9.** Examples of platform bladelet cores. (**a**) Semi-circumferential bladelet core from AU13; (**b**) Semi-circumferential bladelet core from AU12; (**c**) Semi-circumferential bladelet core from AU13; (**d**) Narrow-sided bladelet core from AU13; (**e**) Semi-circumferential bladelet core from AU12; (**f**) Semi-circumferential bladelet core from AU10. The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_318; **b** = Ca_320; **c** = Ca_321; **d** = Ca_323; **e** = Ca_324; **f** = Ca_1511.
+
+<br>
+
+### Figure S10
 ```{r, echo=FALSE, warning=FALSE, fig.width=8}
 # Plot for Carinated Core Volume
 carinated.core.volume <- Dataset_cores %>%
@@ -187,17 +200,14 @@ carinated.core.volume <- Dataset_cores %>%
   ggplot(aes(x = Spit, y = Volume)) +
   geom_boxplot(aes(fill = Spit)) +
   stat_compare_means() +
-  # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
   ggthemes::theme_clean() +
   scale_fill_manual(values = met.brewer("Archambault", 4)) +
-  theme(text = element_text(family = "Times New Roman", size = 18),  # Apply Times New Roman font
-        axis.text = element_text(family = "Times New Roman", size = 12),
+  theme(text = element_text(family = "Times New Roman", size = 18),          axis.text = element_text(family = "Times New Roman", size = 12),
         axis.title = element_text(family = "Times New Roman", size = 14),
         legend.position = "none") +
   labs(y = "Volume (cubic mm)")
 
-# Plot for Carinated Core Flaking Surface Length
 carinated.core.fsl <- Dataset_cores %>%
   filter(Carinated_y.n == "yes") %>%
   group_by(Spit) %>%
@@ -205,73 +215,32 @@ carinated.core.fsl <- Dataset_cores %>%
   geom_boxplot(aes(fill = Spit)) +
   stat_compare_means() +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
-  # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
   ggthemes::theme_clean() +
   scale_fill_manual(values = met.brewer("Archambault", 4)) +
-  theme(text = element_text(family = "Times New Roman", size = 18),  # Apply Times New Roman font
+  theme(text = element_text(family = "Times New Roman", size = 18),
         axis.text = element_text(family = "Times New Roman", size = 12),
         axis.title = element_text(family = "Times New Roman", size = 14),
         legend.position = "none") +
   labs(y = "Flaking surface length (mm)")
 
-# Combine the two plots into one figure
 carinated.core.volume.fsl <- ggarrange(carinated.core.volume, carinated.core.fsl,
                                         labels = c("a", "b"), nrow = 1)
 
-# Display the combined plot
 carinated.core.volume.fsl
-
-
-
-# carinated.core.volume <- Dataset_cores %>%
-#   filter(Carinated_y.n == "yes") %>%
-#   group_by(Spit) %>%
-#   ggplot(aes(x = Spit, y = Volume)) +
-#   geom_boxplot(aes(fill = Spit)) +
-#   stat_compare_means() +
-#   # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
-#   geom_jitter(shape=16, position=position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
-#   ggthemes::theme_clean() +
-#   scale_fill_manual(values=met.brewer("Archambault")) +
-#   theme(text = element_text(size = 18),
-#         axis.text = element_text(size = 12),
-#         axis.title = element_text(size = 14),
-#         legend.position = "none") +
-#   labs(y= "Volume (cubic mm)")
-# 
-# 
-# carinated.core.fsl <- Dataset_cores %>%
-#   filter(Carinated_y.n == "yes") %>%
-#   group_by(Spit) %>%
-#   ggplot(aes(x = Spit, y = Flaking.surface.length)) +
-#   geom_boxplot(aes(fill = Spit)) +
-#   stat_compare_means() +
-#   geom_jitter(shape=16, position=position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
-#   # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
-#   ggthemes::theme_clean() +
-#   scale_fill_manual(values=met.brewer("Archambault")) +
-#   theme(text = element_text(size = 18),
-#         axis.text = element_text(size = 12),
-#         axis.title = element_text(size = 14),
-#         legend.position = "none") +
-#   labs(y= "Flaking surface length (mm)")
-# 
-# carinated.core.volume.fsl <- ggarrange(carinated.core.volume, carinated.core.fsl,
-#           labels = c("a", "b"), nrow=1)
-# 
-# carinated.core.volume.fsl
 ```
-  **Figure S9.** (**a**) Boxplots with jittered points showing the distribution of the volume (in cubic millimeters) of carinated cores across the studied spits. (**b**) Boxplots with jittered points showing the distribution of the length values of the flaking surfaces of carinated cores across the studied spits. The figure includes the results of the Kruskal-Wallis tests, which are not significant in both cases.
+  **Figure S10.** (**a**) Boxplots with jittered points showing the distribution of the volume (in cubic millimeters) of carinated cores across the studied spits. (**b**) Boxplots with jittered points showing the distribution of the length values of the flaking surfaces of carinated cores across the studied spits. The figure includes the results of the Kruskal-Wallis tests, which are not significant in both cases.
 
 <br>
 
-### Figure S10
-```{r, echo=FALSE, fig.align='center', out.width="100%"}
-knitr::include_graphics("../output/figures/Figure_S10.png")
-```
-  **Figure S10.** Examples of bipolar cores from spits AU12 (**a**, **b**) and AU13 (**c**). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The numbers shown after each letter correspond to the dataset created by AF, with each artifact prefixed by “Ca” (the site’s standard acronym).
-
 ### Figure S11
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+knitr::include_graphics("../output/figures/Figure_S11.png")
+```
+  **Figure S11.** Examples of bipolar cores from spits AU12 (**a**, **b**) and AU13 (**c**). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_378; **b** = Ca_379; **c** = Ca_381.
+
+<br>
+
+### Figure S12
 ```{r, echo=FALSE, warning=FALSE, fig.width=8}
 Dataset_cores %>%
   filter(Core.classification == "Bipolar" | Core.classification == "Multidirectional" | Core.classification == "Platform flake" | Core.classification == "Parallel" | Core.classification == "Inclined") %>%
@@ -280,44 +249,20 @@ Dataset_cores %>%
   dplyr::rename(`Knapping technique` = Core.classification) %>%
   ggplot(aes(x = Spit, y = log10(Volume))) +
   geom_boxplot(aes(fill = `Knapping technique`)) +
-  # stat_compare_means(aes(group = `Knapping technique`), label.y = 95000) +
-  # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
   ggthemes::theme_clean() +
   scale_fill_manual(values = met.brewer("Archambault", 2)) +
-  theme(text = element_text(family = "Times New Roman", size = 18),  # Apply Times New Roman font to general text
-        axis.text = element_text(family = "Times New Roman", size = 12),  # Apply Times New Roman font to axis text
-        axis.title = element_text(family = "Times New Roman", size = 14),  # Apply Times New Roman font to axis titles
-        legend.text = element_text(family = "Times New Roman", size = 12),  # Apply Times New Roman font to legend text
+  theme(text = element_text(family = "Times New Roman", size = 18),          axis.text = element_text(family = "Times New Roman", size = 12),
+        axis.title = element_text(family = "Times New Roman", size = 14),
+        legend.text = element_text(family = "Times New Roman", size = 12),
         legend.position = "bottom") +
   labs(y = "Log Volume")
-
-
-
-# Dataset_cores %>%
-#   filter(Core.classification == "Bipolar" | Core.classification == "Multidirectional" | Core.classification == "Platform flake" | Core.classification == "Parallel" | Core.classification == "Inclined") %>%
-#   filter(Raw.material %in% c("Radiolarite", "Chert")) %>%
-#   mutate(Core.classification = recode(Core.classification, `Platform flake` = "Freehand", `Multidirectional` = "Freehand", `Parallel` = "Freehand", `Inclined` = "Freehand")) %>%
-#   dplyr::rename(`Knapping technique` = Core.classification) %>%
-#   ggplot(aes(x = Spit, y = log10(Volume))) +
-#   geom_boxplot(aes(fill = `Knapping technique`)) +
-#   # stat_compare_means(aes(group = `Knapping technique`), label.y = 95000) +
-#   # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
-#   ggthemes::theme_clean() +
-#   scale_fill_manual(values=met.brewer("Archambault", 2)) +
-#   theme(text = element_text(size = 18),
-#         axis.text = element_text(size = 12),
-#         axis.title = element_text(size = 14),
-#         legend.text = element_text(size = 12)) +
-#   theme(legend.position = "bottom") +
-#   labs(y= "Log Volume")
 ```
-  **Figure S11.** Comparison of the volume values of freehand cores (i.e., platform, multidirectional, parallel, and inclined) and bipolar cores in *AU13*-*AU10*, considered as a single assemblage. Volume values were logarithmically transformed to normalize the data and reduce the impact of extreme values, allowing for a more accurate comparison across core types.
+  **Figure S12.** Comparison of the volume values of freehand cores (i.e., platform, multidirectional, parallel, and inclined) and bipolar cores in *AU13*-*AU10*, considered as a single assemblage. Volume values were logarithmically transformed to normalize the data and reduce the impact of extreme values, allowing for a more accurate comparison across core types.
 
 <br>
 
-### Figure S12
-```{r, echo=FALSE, warning=FALSE, fig.width=8}
-# Bladelet Length Raw Material Plot
+### Figure S13
+```{r, echo=FALSE, warning=FALSE, fig.width=10}
 bladelet.length.raw.material <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete", Raw.material == "Radiolarite" | Raw.material == "Chert",
@@ -331,13 +276,12 @@ bladelet.length.raw.material <- Dataset %>%
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
   ggthemes::theme_clean() +
   scale_fill_manual(values = met.brewer("Archambault", 2)) +
-  theme(text = element_text(family = "Times New Roman", size = 18),  # Apply Times New Roman font
+  theme(text = element_text(family = "Times New Roman", size = 18),
         axis.text = element_text(family = "Times New Roman", size = 12),
         axis.title = element_text(family = "Times New Roman", size = 14),
         legend.position = "none") +
   labs(y = "Length (mm)")
 
-# Bladelet Width Raw Material Plot
 bladelet.width.raw.material <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete", Raw.material == "Radiolarite" | Raw.material == "Chert",
@@ -357,7 +301,6 @@ bladelet.width.raw.material <- Dataset %>%
         legend.position = "none") +
   labs(y = "Width (mm)")
 
-# Bladelet Thickness Raw Material Plot
 bladelet.thickness.raw.material <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete", Raw.material == "Radiolarite" | Raw.material == "Chert",
@@ -370,91 +313,16 @@ bladelet.thickness.raw.material <- Dataset %>%
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
   ggthemes::theme_clean() +
   scale_fill_manual(values = met.brewer("Archambault", 2)) +
-  theme(text = element_text(family = "Times New Roman", size = 18),  # Apply Times New Roman font
+  theme(text = element_text(family = "Times New Roman", size = 18),
         axis.text = element_text(family = "Times New Roman", size = 12),
         axis.title = element_text(family = "Times New Roman", size = 14),
         legend.position = "none") +
   labs(y = "Thickness (mm)")
 
-# Arrange the three plots in a single row with labels
 ggarrange(bladelet.length.raw.material, bladelet.width.raw.material, bladelet.thickness.raw.material,
           labels = c("a", "b", "c"), nrow = 1)
-
-
-
-# bladelet.length.raw.material <- Dataset %>%
-#   filter(Blank == "Bladelet" | Blank == "Flakelet",
-#            Preservation == "Complete", Raw.material == "Radiolarite" | Raw.material == "Chert",
-#            Class == "Blank") %>%
-#   group_by(Raw.material) %>%
-#   ggplot(aes(x = Raw.material, y = Length)) +
-#   geom_boxplot(aes(fill = Raw.material)) +
-#   stat_compare_means(comparison = comparison) +
-#   stat_compare_means(label.y = 65, label.x = 1.2) +
-#   geom_jitter(shape=16, position=position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
-#   # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
-#   ggthemes::theme_clean() +
-#   scale_fill_manual(values=met.brewer("Degas", 4)) +
-#   theme(text = element_text(size = 18),
-#         axis.text = element_text(size = 12),
-#         axis.title = element_text(size = 14),
-#         legend.position = "none") +
-#   labs(y= "Length (mm)")
-# 
-# 
-# bladelet.width.raw.material <- Dataset %>%
-#   filter(Blank == "Bladelet" | Blank == "Flakelet",
-#            Preservation == "Complete",
-#          Raw.material == "Radiolarite" | Raw.material == "Chert",
-#            Class == "Blank") %>%
-#   group_by(Raw.material) %>%
-#   ggplot(aes(x = Raw.material, y = Width)) +
-#   geom_boxplot(aes(fill = Raw.material)) +
-#   stat_compare_means(comparison = comparison) +
-#   stat_compare_means(label.y = 19, label.x = 1.2) +
-#   # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
-#   geom_jitter(shape=16, position=position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
-#   ggthemes::theme_clean() +
-#   scale_fill_manual(values=met.brewer("Degas", 4)) +
-#   theme(text = element_text(size = 20),
-#         axis.text = element_text(size = 12),
-#         axis.title = element_text(size = 14),
-#         legend.position = "none") +
-#   labs(y= "Width (mm)")
-# 
-# 
-# bladelet.thickness.raw.material <- Dataset %>%
-#   filter(Blank == "Bladelet" | Blank == "Flakelet",
-#            Preservation == "Complete",
-#          Raw.material == "Radiolarite" | Raw.material == "Chert",
-#            Class == "Blank") %>%
-#   group_by(Raw.material) %>%
-#   ggplot(aes(x = Raw.material, y = Thickness)) +
-#   geom_boxplot(aes(fill = Raw.material)) +
-#   stat_compare_means(comparison = comparison) +
-#   stat_compare_means(label.y = 16, label.x = 1.2) +
-#   geom_jitter(shape=16, position=position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
-#   # geom_jitter(shape=16, position=position_jitter(width = 0.1)) +
-#   ggthemes::theme_clean() +
-#   scale_fill_manual(values=met.brewer("Degas", 4)) +
-#   theme(text = element_text(size = 18),
-#         axis.text = element_text(size = 12),
-#         axis.title = element_text(size = 14),
-#         legend.position = "none") +
-#   labs(y= "Thickness (mm)")
-# 
-# ggarrange(bladelet.length.raw.material, bladelet.width.raw.material, bladelet.thickness.raw.material,
-#           labels = c("A", "B", "C"), nrow=1)
 ```
-  **Figure S12.** Boxplots showing the distribution of length (**A**), width (**B**), and thickness (**C**) across the studied spits divided according to raw material type. The figure includes the results of the Kruskal-Wallis test and pairwise comparisons.
-
-<br>
-
-### Figure S13
-```{r, echo=FALSE, fig.align='center', fig.width=8}
-knitr::include_graphics("../output/figures/Figure_S13.png")
-```
-  **Figure S13.** MCA plots. (**a**) Graph of the individuals with their associated contributions; (**b**) Scree plot showing the percentage of variance explained by the first eight dimensions; (**c**) Graph indicating the importance of the studied variables in constructing the first and second dimensions; (**d**) Contribution of the variables to the first and second dimensions. Abbreviations: ELO = Elongation, ROB = Robustness, CURV = Curvature, TORS = Torsion, DIST = Distal end shape, CS = Cross-section shape, SP = Scar pattern.
+  **Figure S13.** Boxplots showing the distribution of length (**a**), width (**b**), and thickness (**c**) across the studied spits divided according to raw material type. The figure includes the results of the Kruskal-Wallis test and pairwise comparisons.
 
 <br>
 
@@ -462,7 +330,15 @@ knitr::include_graphics("../output/figures/Figure_S13.png")
 ```{r, echo=FALSE, fig.align='center', fig.width=8}
 knitr::include_graphics("../output/figures/Figure_S14.png")
 ```
-  **Figure S14.** MicroCT images of the osseous tool from spit AU13 compared to reference samples. **a.** Split-based point from AU13. **b, c.** Volume renderings of the Haversian network in the distal (b) and proximal (c) regions of the split-based point from AU13. **d.** Internal canal network of the bone point from layer GB1d (Early Gravettian) at Grotta della Cala. **e.** Internal canal network of the antler point from layer 17D1 (Early Epigravettian) at Grotta Paglicci. **f.** Haversian system of a modern reference sample of unworked antler.
+  **Figure S14.** MCA plots. (**a**) Graph of the individuals with their associated contributions; (**b**) Scree plot showing the percentage of variance explained by the first eight dimensions; (**c**) Graph indicating the importance of the studied variables in constructing the first and second dimensions; (**d**) Contribution of the variables to the first and second dimensions. Abbreviations: ELO = Elongation, ROB = Robustness, CURV = Curvature, TORS = Torsion, DIST = Distal end shape, CS = Cross-section shape, SP = Scar pattern.
+
+<br>
+
+### Figure S15
+```{r, echo=FALSE, fig.align='center', fig.width=8}
+knitr::include_graphics("../output/figures/Figure_S15.png")
+```
+  **Figure S15.** MicroCT images of the osseous tool from spit AU13 compared to reference samples. (**a**) Split-based point from AU13. (**b**, **c**) Volume renderings of the Haversian network in the distal (b) and proximal (c) regions of the split-based point from AU13. (**d**) Internal canal network of the bone point from layer GB1d (Early Gravettian) at Grotta della Cala. (**e**) Internal canal network of the antler point from layer 17D1 (Early Epigravettian) at Grotta Paglicci. (**f**) Haversian system of a modern reference sample of unworked antler.
 
 <br>
 
@@ -485,9 +361,6 @@ Dataset %>%
   theme_vanilla() %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
-  # kbl(align = "lccc") %>%
-  # row_spec(1, bold = T, hline_after = F) %>%
-  # kable_classic_2(lightable_options = "striped", full_width = F)
 ```
 **Table S1.** Distribution of tools and core-tools categorized by raw material type across the studied spits. Percentages are provided in brackets.
 
@@ -508,9 +381,6 @@ Dataset_cores %>%
   theme_vanilla() %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
-  # kbl(align = "lccc") %>%
-  # row_spec(1, bold = T, hline_after = F) %>%
-  # kable_classic_2(lightable_options = "striped", full_width = F)
 ```
   **Table S2.** Distribution of laminar cores across the studied spits, categorized by raw material type. Percentages are provided in brackets.
 
@@ -531,9 +401,6 @@ Dataset_cores %>%
   theme_vanilla() %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
-  # kbl(align = "lccc") %>%
-  # row_spec(1, bold = T, hline_after = F) %>%
-  # kable_classic_2(lightable_options = "striped", full_width = F)
 ```
   **Table S3.** Distribution of flake and bipolar cores across the studied spits, categorized by raw material type. Rounded percentages are provided in brackets.
 
@@ -551,9 +418,6 @@ Dataset %>%
   theme_vanilla() %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
-  # kbl(align = "lcccr") %>%
-  # row_spec(1, bold = T, hline_after = F) %>%
-  # kable_classic_2(lightable_options = "striped", full_width = F)
 ```
   **Table S4.** Position of lateral modifications on the retouched bladelets recovered from the studied spits.
 
@@ -572,9 +436,6 @@ Dataset %>%
   theme_vanilla() %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
-  # kbl(align = "lccccr") %>%
-  # row_spec(1, bold = T, hline_after = F) %>%
-  # kable_classic_2(lightable_options = "striped", full_width = F)
 ```
   **Table S5.** Detailed classification of the composite tools recovered from AU13 to AU10.
 
@@ -790,9 +651,6 @@ Dataset %>%
   theme_vanilla() %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
-  # kbl(align = "llccccc", digits = 1) %>%
-  # row_spec(0, bold = T, hline_after = F) %>%
-  # kable_classic_2(lightable_options = "striped", full_width = F)
 ```
   **Table S16.** Summary statistics of linear dimensions (length, width, and thickness in mm) recorded on complete blades, excluding those modified by lateral retouch. *SD* refers to standard deviation.
 
@@ -809,25 +667,13 @@ species_data <- data.frame(
   Total = c("1 (1.7%)", "1 (1.7%)", "1 (1.7%)", "1 (1.7%)", "28 (48.3%)", "1 (1.7%)", "2 (3.4%)", "1 (1.7%)", "2 (3.4%)", "5 (8.6%)", "6 (10.3%)", "1 (2.8%)", "1 (2.8%)", "1 (2.8%)", "5 (8.6%)", "1 (1.7%)", "58")
 )
 
-# Replace "0" with "-" in the relevant columns (AU10, AU11, AU12, AU13, and Total)
 species_data[, -1] <- lapply(species_data[, -1], function(x) gsub("^0$", "-", x))
 
-# Make species names italicized using HTML tags
-# species_data$Species <- paste0("<i>", species_data$Species, "</i>")
-
-# Display the table with the desired formatting and species names in italics
-# species_table <- species_data %>%
-#   flextable() %>%
-#   theme_vanilla() %>%
-#   set_table_properties(layout = "autofit") %>%
-#   autofit()
-
 species_table <- flextable(species_data) %>%
-  compose(j = "Species", value = as_paragraph(as_i(Species))) %>%  # Italicize the Species column
+  compose(j = "Species", value = as_paragraph(as_i(Species))) %>%
   autofit() %>%
   theme_vanilla()
 
-# Display the formatted table
 species_table
 ```
   **Table S17.** Overview of the specimens characterized by evidence of human perforation recovered in the Aurignacian spits AU13–AU10 at Grotta della Cala. Percentages are reported in brackets.

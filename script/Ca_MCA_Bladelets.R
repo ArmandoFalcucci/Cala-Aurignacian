@@ -1,4 +1,4 @@
-# Multiple Correspondence Analysis (MCA) Analysis of complete bladelets from La Cala, spits AU13-AU10
+# Multiple Correspondence Analysis (MCA) Analysis of complete bladelets from La Cala AU13-AU10
 
 # Load necessary libraries
 library(factoextra)
@@ -11,6 +11,17 @@ library(RcmdrMisc)
 library(forcats)
 library(cowplot)
 library(multcompView)
+
+
+Dataset <- readr::read_csv(file = "data/Ca_Dataset_complete.csv", col_names = TRUE,
+                           col_types = readr::cols(
+                             Spit = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
+                             )))
+
+Dataset_cores <- readr::read_csv(file = "../data/Ca_Dataset_cores.csv", col_names = TRUE,
+                                 col_types = readr::cols(
+                                   Spit = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
+                                   )))
 
 # Define comparisons
 comparisons <- c("AU13-AU12", "AU13-AU11", "AU13-AU10", "AU12-AU11", "AU12-AU10", "AU11-AU10")
@@ -30,9 +41,10 @@ MCA_bladelet.morpho$Robustness <- RcmdrMisc::binVariable(MCA_bladelet.morpho$Rob
 
 # Rename and recode variables for clarity and consistency
 MCA_bladelet.morpho <- MCA_bladelet.morpho %>%
-  dplyr::select(Spit, Elongation, Robustness, Curvature, Torsion.simplified, Distal.end, Section, Scar.Pattern.2) %>%
+  dplyr::select(`Sub-layer`, Elongation, Robustness, Curvature, Torsion.simplified, Distal.end, Section, Scar.Pattern.2) %>%
   na.omit() %>%
   droplevels() %>%
+  dplyr::rename(SubL = `Sub-layer`) %>%
   dplyr::rename(ELO = Elongation, ROB = Robustness, CURV = Curvature, TORS = Torsion.simplified, DIST = Distal.end, CS = Section, SP = Scar.Pattern.2) %>%
   dplyr::mutate(TORS = dplyr::recode(TORS, "yes" = "Twisted", "no" = "Non-twisted"))
 
@@ -69,7 +81,7 @@ MCA_bladelet.morpho.contribution <- fviz_contrib(MCA_bladelet.morpho.analysis, c
 
 # MCA plot for individuals with ellipses
 MCA_bladelet.morpho.individuals <- fviz_mca_ind(MCA_bladelet.morpho.analysis, addEllipses = TRUE, ellipse.type = "confidence", label = "none", pointsize = 1, habillage = 1,
-                                                legend.title = "Spit") +
+                                                legend.title = "Sub-layer") +
   theme_minimal(base_size = 11) + theme(text = element_text(family = "Times New Roman"))
 
 # MCA plot for individuals colored by contributions
@@ -77,7 +89,7 @@ MCA_bladelet.morpho.individuals.alone <- fviz_mca_ind(MCA_bladelet.morpho.analys
                                                       pointsize = 0.6, ggtheme = theme_grey(base_size = 11) + theme(text = element_text(family = "Times New Roman")))
 
 # Combine plots and save as TIFF
-ggsave(filename = "./output/figures/Figure_S13.png", width = 20, height = 22, units = "cm", dpi = 300, plot = (
+ggsave(filename = "./output/figures/Figure_S14.png", width = 20, height = 22, units = "cm", dpi = 300, plot = (
   ggdraw() +
     draw_plot(MCA_bladelet.morpho.individuals.alone, x = 0, y = .66, width = .5, height = .34) +
     draw_plot(MCA_bladelet.morpho.screeplot, x = .5, y = .66, width = .5, height = .34) +
@@ -90,7 +102,7 @@ ggsave(filename = "./output/figures/Figure_S13.png", width = 20, height = 22, un
 
 # Prepare data for ANOVA (adapted from Cascalheira 2019)
 MCA_bladelet.morpho.analysis.coord <- as.data.frame(MCA_bladelet.morpho.analysis$ind)
-context <- as.data.frame(MCA_bladelet.morpho$Spit)
+context <- as.data.frame(MCA_bladelet.morpho$`SubL`)
 
 MCA_bladelet.morpho.analysis.coord <- MCA_bladelet.morpho.analysis.coord %>%
   dplyr::select(1:2)
@@ -99,7 +111,7 @@ MCA_bladelet.morpho.analysis.coord <- MCA_bladelet.morpho.analysis.coord %>%
 MCA_bladelet.morpho.analysis.coord <- bind_cols(context, MCA_bladelet.morpho.analysis.coord)
 
 MCA_bladelet.morpho.analysis.coord <- MCA_bladelet.morpho.analysis.coord %>%
-  mutate(context = `MCA_bladelet.morpho$Spit`, "dim1" = coord.Dim.1, "dim2" = coord.Dim.2) %>%
+  mutate(context = MCA_bladelet.morpho$`SubL` , "dim1" = coord.Dim.1, "dim2" = coord.Dim.2) %>%
   dplyr::select(context, dim1, dim2)
 
 
@@ -193,4 +205,4 @@ var.dim1.dim2.bladelet.morpho <- ggarrange(MCA_bladelet.morpho.variable.category
 # Display the combined plot
 var.dim1.dim2.bladelet.morpho
 
-ggsave("./output/figures/Figure_7.tiff", plot = var.dim1.dim2.bladelet.morpho, width = 8, height = 8, units = "in", dpi = 300)
+ggsave("./output/figures/Figure_8.tiff", plot = var.dim1.dim2.bladelet.morpho, width = 8, height = 8, units = "in", dpi = 300)

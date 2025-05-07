@@ -1,6 +1,6 @@
 ---
-title: Supplementary Material (SM)
-subtitle: "Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala"
+title: "Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala"
+subtitle: Supplementary Material (SM)
 author:
 - Armando Falcucci, Keiko Kitagawa, Luc Doyon, Laura Tassoni, Tom Higham, Clarissa Dominici, Diego Dreossi, Jacopo Crezzini, Matteo Rossini, Stefano Benazzi, Ivan Martini, Francesco Boschin, Vincenzo Spagnolo, Adriana Moroni
 - armando.falcucci@uni-tuebingen.de & vincenzo.spagnolo@unisi.it (corresponding authors)
@@ -18,7 +18,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 ```{r, include=FALSE, warning=FALSE}
+# Packages used
 library(readxl)
 library(knitr)
 library(kableExtra)
@@ -37,15 +39,17 @@ library(ggpubr)
 library(flextable)
 library(extrafont)
 ```
+
 ```{r include=FALSE, warning=FALSE}
+# Load datasets
 Dataset <- readr::read_csv(file = "../data/Ca_Dataset_complete.csv", col_names = TRUE,
                            col_types = readr::cols(
-                             Spit = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
+                             `Sub-layer` = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
                            )))
 
 Dataset_cores <- readr::read_csv(file = "../data/Ca_Dataset_cores.csv", col_names = TRUE,
                            col_types = readr::cols(
-                             Spit = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
+                             `Sub-layer` = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
                            )))
 
 comparison <- list(c("AU13", "AU12"), c("AU13", "AU11"), c("AU13", "AU10"), c("AU12", "AU11"), c("AU12", "AU10"), c("AU11", "AU10"))
@@ -53,15 +57,27 @@ comparison <- list(c("AU13", "AU12"), c("AU13", "AU11"), c("AU13", "AU10"), c("A
 
 <br>
 
-## SM Note 1: Microcomputed tomography of the split-based point from AU13
+## SM Note 1: Methodological remarks on lithic analysis
+
+All studied artifacts were first classified into broad raw material categories based on macroscopic features and, where present, the type of cortex. We recorded several metric and categorical attributes for individual lithic artifacts to investigate the technological organization of stone tool production (e.g., Tafelmaier, 2017; Zwyns, 2012). Both blanks and cores were measured using a digital caliper with a precision of 0.2 mm and a resolution of 0.1 mm. Blanks were measured after being oriented according to their technological axis, while cores were measured based on their technological orientation. For laminar cores, length was measured along the longitudinal axis of the flaking surface, as described by Lombao et al. (2023). Cortex coverage on both cores and blanks was recorded in five intervals: 0%, 1-33%, 33-66%, 66-99%, and 100%.
+
+On blanks, we recorded the direction and orientation of removals, the shape and size of the platform, the presence and intensity of butts and lips, the profile curvature and twisting in profile view, and the external morphology of the entire blank, including its distal side in dorsal and profile views. Retouched tools and blank fragments were excluded when quantifying the morphometric features of blanks before modification. We classified laminar blanks into two main categories—blades and bladelets—based on the metric boundary established by Tixier (1963), where a bladelet is defined as a laminar blank with a width below 12 mm. While bladelets should ideally have a length at least twice their maximum width, we found that this strict definition is not always applicable to Aurignacian assemblages, especially for those produced from carinated cores. As demonstrated at Castelcivita, bladelets from carinated production can be less elongated than those from platform cores, with some having a length-to-width ratio slightly below 2 (Falcucci et al., 2024). These artifacts are abundant at La Cala (n = 104), so we introduced an additional classification borrowed by Moroni et al. (2018)—“flakelets”—to highlight these blanks for future studies. It is important to notice that flakelet in this context does not refer to the small-sized flakes resulting from the Uluzzian bipolar knapping, as in Moroni et al. (2018).
+
+On cores, we recorded the directionality and orientation of removals, the number and shape of striking platform(s), the length and width of the flaking surface, the dimensions of the last removals (i.e., width and thickness), and the presence of removals related to initialization and maintenance operations. Core classification was based on their morphological attributes and the last visible removals, which indicate the production objective at discard. The primary core classification follows Conard et al. (2004), while blade and bladelet cores were further subclassified according to Falcucci & Peresani (2018). Carinated cores received particular attention, with their analysis and classification guided by studies focused on the Aurignacian (Chiotti, 2000; Falcucci et al., 2024; Le Brun-Ricalens & Brou, 2003; Le Brun-Ricalens, 2005). 
+
+Tool types were classified following a revised and simplified version of common tool typologies (de Sonneville-Bordes, 1960; Demars & Laurent, 1992) as outlined in Falcucci et al. (2024). Carinated cores were also classified as tools for inter-site comparison, acknowledging their potential multifunctional purpose. Similarly, burins were classified as cores when they exhibited multiple bladelet negatives oriented along the longitudinal axis of the blank and featured a prepared, plain striking platform.
+
+<br>
+
+## SM Note 2: Microcomputed tomography of the split-based point from AU13
 
 ### Methodological remarks
 
-The osseous tool from spit AU13 (Fig. S14a) was scanned using X-ray micro-computed tomography (microCT) at the Tomolab station (Mancini et al., 2007)  located at Elettra Sincrotrone Trieste, Basovizza (Italy). The system utilizes a sealed microfocus X-ray source (Hamamatsu L9181) coupled with a CCD camera (VHR, Photonics Science) featuring a 4008×2672 pixel matrix with a pixel size of 12.5 µm. For both the distal and proximal regions of the tool, 1,440 projections were acquired over 360 degrees, resulting in an equivalent pixel size of 7 µm (with a focal spot size of 8 µm). The acquisition parameters for the two regions were set at 70 kVp and 100 µA for the distal region, and 115 kVp and 75 µA for the proximal region, using Al filters of 0.5 mm and 1.5 mm, respectively. The slices were reconstructed using the NRecon software package (Version 1.7.0.4), with a voxel size of 7 μm. Volume renderings of the object and the internal canal network in both the distal and proximal regions were analyzed using the Avizo Software package (ThermoFisher Scientific, Version 2022.1).
+The osseous tool from AU13 (Fig. S14a) was scanned using X-ray micro-computed tomography (microCT) at the Tomolab station (Mancini et al., 2007)  located at Elettra Sincrotrone Trieste, Basovizza (Italy). The system utilizes a sealed microfocus X-ray source (Hamamatsu L9181) coupled with a CCD camera (VHR, Photonics Science) featuring a 4008×2672 pixel matrix with a pixel size of 12.5 µm. For both the distal and proximal regions of the tool, 1,440 projections were acquired over 360 degrees, resulting in an equivalent pixel size of 7 µm (with a focal spot size of 8 µm). The acquisition parameters for the two regions were set at 70 kVp and 100 µA for the distal region, and 115 kVp and 75 µA for the proximal region, using Al filters of 0.5 mm and 1.5 mm, respectively. The slices were reconstructed using the NRecon software package (Version 1.7.0.4), with a voxel size of 7 μm. Volume renderings of the object and the internal canal network in both the distal and proximal regions were analyzed using the Avizo Software package (ThermoFisher Scientific, Version 2022.1).
 
 The same system was used to scan the reference samples included in the analysis: two archaeological specimens from the Upper Paleolithic layers of Grotta della Cala and Grotta Paglicci, as well as a modern reference sample of unworked deer antler. The first archaeological sample is a bone point from layer GB1d (Early Gravettian - atrium series) of La Cala, identified by Boscato et al. (1997) as made from an undetermined fragment of a long bone diaphysis, with visible internal cavity and trabecular structure at one end. According to their description, the point (86 × 5 × 9 mm) features a facetted oval cross-section and an asymmetrical, beveled apex, and is covered with longitudinal striations converging toward the tip, along with short parallel transverse striations in the central area (Boscato et al., 1997). The intentional oblique fracture at the base and a shallow notch in the proximal area have been hypothetically associated with hafting practices, identifying it as a spearpoint (Boscato et al., 1997). To compare its internal microstructure with that of the split-based point from AU13, the medial area of the point was examined.
 
-The second archaeological specimen is a fusiform spearpoint recovered from layer 17D1 (Early Epigravettian) of Grotta Paglicci (Apulia). Borgia et al. (2016) identified this sample as having been produced from a red deer (*Cervus elaphus*) antler fragment, consisting of both cortical and trabecular tissue. This tool (80 × 13 × 10 mm) has a sub-oval cross-section, a fractured apex, and is nearly symmetrical, with a rounded base featuring deep oblique notches and dark residues possibly related to hafting (Borgia et al., 2016). For comparison with the osseous tool from spit AU13, the central region of this spearpoint was analyzed. The modern reference of unworked antler is a tine from Cervus elaphus sourced from the osteological reference collection of the University of Siena, with the apical region of the tine considered for the present analysis.
+The second archaeological specimen is a fusiform spearpoint recovered from layer 17D1 (Early Epigravettian) of Grotta Paglicci (Apulia). Borgia et al. (2016) identified this sample as having been produced from a red deer (*Cervus elaphus*) antler fragment, consisting of both cortical and trabecular tissue. This tool (80 × 13 × 10 mm) has a sub-oval cross-section, a fractured apex, and is nearly symmetrical, with a rounded base featuring deep oblique notches and dark residues possibly related to hafting (Borgia et al., 2016). For comparison with the osseous tool from AU13, the central region of this spearpoint was analyzed. The modern reference of unworked antler is a tine from Cervus elaphus sourced from the osteological reference collection of the University of Siena, with the apical region of the tine considered for the present analysis.
 
 ### The bone point from layer GB1d (La Cala) and the antler point from layer 17D1 (Paglicci)
 
@@ -81,7 +97,7 @@ The dendritic appearance of the Haversian network in this tool is similar to tha
 
 <br>
 
-## SM Note 2: OxCal code
+## SM Note 3: OxCal code
 
 <br>
 
@@ -133,7 +149,7 @@ knitr::include_graphics("../output/figures/Figure_S1.png")
 ```{r, echo=FALSE, fig.align='center', out.width="50%"}
 knitr::include_graphics("../output/figures/Figure_S2.png")
 ```
-  **Figure S2.** Photomap of the Early Aurignacian living floor at the top of spit 10 (Elaboration: S. Ricci).
+  **Figure S2.** Photomap of the Early Aurignacian living floor at the top of AU10 (Elaboration: S. Ricci).
 
 <br>
 
@@ -141,7 +157,7 @@ knitr::include_graphics("../output/figures/Figure_S2.png")
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
 knitr::include_graphics("../output/figures/Figure_S3.png")
 ```
-  **Figure S3.** Image-based 3D model of the *Atrium series* as it was left by P. Gambassini after his excavations in 1994. On the right, the top of the Aurignacian occupation is visible, featuring a cemented surface with circular pools of varying dimensions. On the left, the trench deepens down to the marine conglomerate. (Elaboration: G. Poggi).
+  **Figure S3.** Image-based 3D model of the *Atrium series* as it was left by P. Gambassini after his excavations in 1994. On the right, the top of the Aurignacian occupation (AU10) is visible, featuring a cemented surface with circular pools of varying dimensions. On the left, the trench deepens down to the marine conglomerate. (Elaboration: G. Poggi).
 
 <br>
 
@@ -157,7 +173,7 @@ knitr::include_graphics("../output/figures/Figure_S4.png")
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
 knitr::include_graphics("../output/figures/Figure_S5.png")
 ```
-  **Figure S5.** State of the art after the excavation campaign conducted in 2016. The *Atrium series* lies on a marine conglomerate, which, based on geological evidence, has been hypothetically attributed to MIS5e. (Photo: Adriana Moroni).
+  **Figure S5.** State of the art after the excavation campaign conducted in 2016. The *Atrium series* lies on a marine conglomerate, which, based on geological evidence, has been hypothetically attributed to MIS5e. (Photo: A. Moroni).
 
 <br>
 
@@ -165,7 +181,7 @@ knitr::include_graphics("../output/figures/Figure_S5.png")
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
 knitr::include_graphics("../output/figures/Figure_S6.png")
 ```
-  **Figure S6.** The unworked incisor root from AU12, square C8, from a medium-sized mammal, previously identified as a bone tool. The figure was created in Artifact3-D.
+  **Figure S6.** The unworked incisor root from AU12, square C8, from a medium-sized mammal, previously identified as a bone tool. The figure was created in Artifact3-D using the *Create Plate* function.
 
 <br>
 
@@ -173,7 +189,7 @@ knitr::include_graphics("../output/figures/Figure_S6.png")
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
 knitr::include_graphics("../output/figures/Figure_S7.png")
 ```
-  **Figure S7.** Examples of retouched tools from spits AU13–AU10. (**a**) Endscraper on blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**b**) Endscraper on flake with stepped bilateral retouch (i.e., Aurignacian retouch); (**c**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**d**) Carinated endscraper on a semi-cortical flake with stepped unilateral retouch; (**e**) Blade with discontinuous bilateral retouch; (**f**) Endscraper on a semi-cortical blade; (**g**) Semi-cortical flake with bilateral retouch; (**h**) Burin on truncation; (**i**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). Artifact distribution by spit is as follows: (**f**) from AU10; (**c**) and (**h**) from AU11; (**a**), (**b**), (**d**), and (**e**) from AU12; and (**g**) and (**i**) from AU13. The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_126; **b** = Ca_125; **c** = Ca_163; **d** = Ca_123; **e** = Ca_164; **f** = Ca_132; **g** = Ca_373; **h** = Ca_371; and **i** = Ca_167.
+  **Figure S7.** Examples of retouched tools from AU13–AU10. (**a**) Endscraper on blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**b**) Endscraper on flake with stepped bilateral retouch (i.e., Aurignacian retouch); (**c**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch); (**d**) Carinated endscraper on a semi-cortical flake with stepped unilateral retouch; (**e**) Blade with discontinuous bilateral retouch; (**f**) Endscraper on a semi-cortical blade; (**g**) Semi-cortical flake with bilateral retouch; (**h**) Burin on truncation; (**i**) Blade with stepped bilateral retouch (i.e., Aurignacian retouch). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). Artifact distribution by sub-layer is as follows: (**f**) from AU10; (**c**) and (**h**) from AU11; (**a**), (**b**), (**d**), and (**e**) from AU12; and (**g**) and (**i**) from AU13. The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_126; **b** = Ca_125; **c** = Ca_163; **d** = Ca_123; **e** = Ca_164; **f** = Ca_132; **g** = Ca_373; **h** = Ca_371; and **i** = Ca_167.
 
 ### Figure S8
 ```{r, echo=FALSE, fig.align='center', out.width="80%"}
@@ -196,9 +212,9 @@ knitr::include_graphics("../output/figures/Figure_S9.png")
 # Plot for Carinated Core Volume
 carinated.core.volume <- Dataset_cores %>%
   filter(Carinated_y.n == "yes") %>%
-  group_by(Spit) %>%
-  ggplot(aes(x = Spit, y = Volume)) +
-  geom_boxplot(aes(fill = Spit)) +
+  group_by(`Sub-layer`) %>%
+  ggplot(aes(x = `Sub-layer`, y = Volume)) +
+  geom_boxplot(aes(fill = `Sub-layer`)) +
   stat_compare_means() +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
   ggthemes::theme_clean() +
@@ -210,9 +226,9 @@ carinated.core.volume <- Dataset_cores %>%
 
 carinated.core.fsl <- Dataset_cores %>%
   filter(Carinated_y.n == "yes") %>%
-  group_by(Spit) %>%
-  ggplot(aes(x = Spit, y = Flaking.surface.length)) +
-  geom_boxplot(aes(fill = Spit)) +
+  group_by(`Sub-layer`) %>%
+  ggplot(aes(x = `Sub-layer`, y = Flaking.surface.length)) +
+  geom_boxplot(aes(fill = `Sub-layer`)) +
   stat_compare_means() +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), alpha = 0.2, size = 0.7) +
   ggthemes::theme_clean() +
@@ -228,7 +244,7 @@ carinated.core.volume.fsl <- ggarrange(carinated.core.volume, carinated.core.fsl
 
 carinated.core.volume.fsl
 ```
-  **Figure S10.** (**a**) Boxplots with jittered points showing the distribution of the volume (in cubic millimeters) of carinated cores across the studied spits. (**b**) Boxplots with jittered points showing the distribution of the length values of the flaking surfaces of carinated cores across the studied spits. The figure includes the results of the Kruskal-Wallis tests, which are not significant in both cases.
+  **Figure S10.** (**a**) Boxplots with jittered points showing the distribution of the volume (in cubic millimeters) of carinated cores across the studied sub-layers. (**b**) Boxplots with jittered points showing the distribution of the length values of the flaking surfaces of carinated cores across the studied sub-layers. The figure includes the results of the Kruskal-Wallis tests, which are not significant in both cases.
 
 <br>
 
@@ -236,7 +252,7 @@ carinated.core.volume.fsl
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
 knitr::include_graphics("../output/figures/Figure_S11.png")
 ```
-  **Figure S11.** Examples of bipolar cores from spits AU12 (**a**, **b**) and AU13 (**c**). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_378; **b** = Ca_379; **c** = Ca_381.
+  **Figure S11.** Examples of bipolar cores from AU12 (**a**, **b**) and AU13 (**c**). The figure includes 3D views generated in Artifact3-D and drawings adapted from Benini et al. (1997). The letters in the figure correspond to the following IDs in the associated dataset: **a** = Ca_378; **b** = Ca_379; **c** = Ca_381.
 
 <br>
 
@@ -245,19 +261,20 @@ knitr::include_graphics("../output/figures/Figure_S11.png")
 Dataset_cores %>%
   filter(Core.classification == "Bipolar" | Core.classification == "Multidirectional" | Core.classification == "Platform flake" | Core.classification == "Parallel" | Core.classification == "Inclined") %>%
   filter(Raw.material %in% c("Radiolarite", "Chert")) %>%
-  mutate(Core.classification = recode(Core.classification, `Platform flake` = "Freehand", `Multidirectional` = "Freehand", `Parallel` = "Freehand", `Inclined` = "Freehand")) %>%
+  mutate(Core.classification = dplyr::recode(Core.classification, `Platform flake` = "Freehand", `Multidirectional` = "Freehand", `Parallel` = "Freehand", `Inclined` = "Freehand")) %>%
   dplyr::rename(`Knapping technique` = Core.classification) %>%
-  ggplot(aes(x = Spit, y = log10(Volume))) +
+  ggplot(aes(x = `Sub-layer`, y = log10(Volume))) +
   geom_boxplot(aes(fill = `Knapping technique`)) +
   ggthemes::theme_clean() +
   scale_fill_manual(values = met.brewer("Archambault", 2)) +
-  theme(text = element_text(family = "Times New Roman", size = 18),          axis.text = element_text(family = "Times New Roman", size = 12),
+  theme(text = element_text(family = "Times New Roman", size = 18),
+        axis.text = element_text(family = "Times New Roman", size = 12),
         axis.title = element_text(family = "Times New Roman", size = 14),
         legend.text = element_text(family = "Times New Roman", size = 12),
         legend.position = "bottom") +
   labs(y = "Log Volume")
 ```
-  **Figure S12.** Comparison of the volume values of freehand cores (i.e., platform, multidirectional, parallel, and inclined) and bipolar cores in *AU13*-*AU10*, considered as a single assemblage. Volume values were logarithmically transformed to normalize the data and reduce the impact of extreme values, allowing for a more accurate comparison across core types.
+  **Figure S12.** Comparison of the volume values of freehand cores (i.e., platform, multidirectional, parallel, and inclined) and bipolar cores in AU13-AU10, considered as a single assemblage. Volume values were logarithmically transformed to normalize the data and reduce the impact of extreme values, allowing for a more accurate comparison across core types.
 
 <br>
 
@@ -322,7 +339,7 @@ bladelet.thickness.raw.material <- Dataset %>%
 ggarrange(bladelet.length.raw.material, bladelet.width.raw.material, bladelet.thickness.raw.material,
           labels = c("a", "b", "c"), nrow = 1)
 ```
-  **Figure S13.** Boxplots showing the distribution of length (**a**), width (**b**), and thickness (**c**) across the studied spits divided according to raw material type. The figure includes the results of the Kruskal-Wallis test and pairwise comparisons.
+  **Figure S13.** Boxplots showing the distribution of length (**a**), width (**b**), and thickness (**c**) across the studied sub-layers divided according to raw material type. The figure includes the results of the Kruskal-Wallis test and pairwise comparisons.
 
 <br>
 
@@ -330,7 +347,7 @@ ggarrange(bladelet.length.raw.material, bladelet.width.raw.material, bladelet.th
 ```{r, echo=FALSE, fig.align='center', fig.width=8}
 knitr::include_graphics("../output/figures/Figure_S14.png")
 ```
-  **Figure S14.** MCA plots. (**a**) Graph of the individuals with their associated contributions; (**b**) Scree plot showing the percentage of variance explained by the first eight dimensions; (**c**) Graph indicating the importance of the studied variables in constructing the first and second dimensions; (**d**) Contribution of the variables to the first and second dimensions. Abbreviations: ELO = Elongation, ROB = Robustness, CURV = Curvature, TORS = Torsion, DIST = Distal end shape, CS = Cross-section shape, SP = Scar pattern.
+  **Figure S14.** MCA plots. (**a**) Graph of the individuals with their associated contributions; (**b**) Scree plot showing the percentage of variance explained by the first eight dimensions; (**c**) Graph indicating the importance of the studied variables in constructing the first and second dimensions; (**d**) Contribution of the variables to the first and second dimensions. Abbreviations: SubL = Sub-layer, ELO = Elongation, ROB = Robustness, CURV = Curvature, TORS = Torsion, DIST = Distal end shape, CS = Cross-section shape, SP = Scar pattern.
 
 <br>
 
@@ -338,7 +355,7 @@ knitr::include_graphics("../output/figures/Figure_S14.png")
 ```{r, echo=FALSE, fig.align='center', fig.width=8}
 knitr::include_graphics("../output/figures/Figure_S15.png")
 ```
-  **Figure S15.** MicroCT images of the osseous tool from spit AU13 compared to reference samples. (**a**) Split-based point from AU13. (**b**, **c**) Volume renderings of the Haversian network in the distal (b) and proximal (c) regions of the split-based point from AU13. (**d**) Internal canal network of the bone point from layer GB1d (Early Gravettian) at Grotta della Cala. (**e**) Internal canal network of the antler point from layer 17D1 (Early Epigravettian) at Grotta Paglicci. (**f**) Haversian system of a modern reference sample of unworked antler.
+  **Figure S15.** MicroCT images of the osseous tool from AU13 compared to reference samples. (**a**) Split-based point from AU13. (**b**, **c**) Volume renderings of the Haversian network in the distal (b) and proximal (c) regions of the split-based point from AU13. (**d**) Internal canal network of the bone point from layer GB1d (Early Gravettian) at Grotta della Cala. (**e**) Internal canal network of the antler point from layer 17D1 (Early Epigravettian) at Grotta Paglicci. (**f**) Haversian system of a modern reference sample of unworked antler.
 
 <br>
 
@@ -349,9 +366,9 @@ knitr::include_graphics("../output/figures/Figure_S15.png")
 Dataset %>%
   dplyr::filter(Class == "Tool") %>%
   dplyr::rename(`Raw material` = Raw.material) %>%
-  dplyr::select(`Raw material`, Spit) %>%
+  dplyr::select(`Raw material`, `Sub-layer`) %>%
   na.omit() %>%
-  tabyl(`Raw material`, Spit) %>%
+  tabyl(`Raw material`, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%
   adorn_percentages("col") %>%
@@ -362,7 +379,7 @@ Dataset %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
 ```
-**Table S1.** Distribution of tools and core-tools categorized by raw material type across the studied spits. Percentages are provided in brackets.
+**Table S1.** Distribution of tools and core-tools categorized by raw material type across the studied sub-layers. Percentages are provided in brackets.
 
 <br>
 
@@ -372,7 +389,7 @@ Dataset_cores %>%
     filter(Class %in% c("Core", "Core-Tool")) %>%
   filter(Laminar_y.n == "yes") %>%
   dplyr::rename(`Raw material` = Raw.material) %>%
-  tabyl(`Raw material`, Spit) %>%
+  tabyl(`Raw material`, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_percentages("col") %>%
   adorn_pct_formatting(digits = 1) %>%
@@ -382,7 +399,7 @@ Dataset_cores %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
 ```
-  **Table S2.** Distribution of laminar cores across the studied spits, categorized by raw material type. Percentages are provided in brackets.
+  **Table S2.** Distribution of laminar cores across the studied sub-layers, categorized by raw material type. Percentages are provided in brackets.
 
 <br>
 
@@ -392,7 +409,7 @@ Dataset_cores %>%
   filter(Class %in% c("Core", "Core-Tool")) %>%
   filter(Laminar_y.n == "no") %>%
   dplyr::rename(`Raw material` = Raw.material) %>%
-  tabyl(`Raw material`, Spit) %>%
+  tabyl(`Raw material`, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_percentages("col") %>%
   adorn_pct_formatting(digits = 1) %>%
@@ -402,7 +419,7 @@ Dataset_cores %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
 ```
-  **Table S3.** Distribution of flake and bipolar cores across the studied spits, categorized by raw material type. Rounded percentages are provided in brackets.
+  **Table S3.** Distribution of flake and bipolar cores across the studied sub-layers, categorized by raw material type. Rounded percentages are provided in brackets.
 
 <br>
 
@@ -411,7 +428,7 @@ Dataset_cores %>%
 Dataset %>%
   filter(Typology.new == "Bladelet retouched") %>%
   dplyr::rename(`Position of retouch` = Retouch.position) %>%
-  tabyl(Spit, `Position of retouch`) %>%
+  tabyl(`Sub-layer`, `Position of retouch`) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   flextable() %>%
@@ -419,7 +436,7 @@ Dataset %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
 ```
-  **Table S4.** Position of lateral modifications on the retouched bladelets recovered from the studied spits.
+  **Table S4.** Position of lateral modifications on the retouched bladelets recovered from the studied sub-layers.
 
 <br>
 
@@ -429,7 +446,7 @@ Dataset %>%
 Dataset %>%
   filter(Typology.new == "Composite tool") %>%
   mutate(Typology = str_replace_all(Typology, ";", "-")) %>%
-  tabyl(Typology, Spit) %>%
+  tabyl(Typology, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%
   flextable() %>%
@@ -445,7 +462,7 @@ Dataset %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset %>%
   filter(Class == "Tool" | Class == "Core-Tool") %>%
-  tabyl(Spit, Blank) %>%
+  tabyl(`Sub-layer`, Blank) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -464,7 +481,7 @@ Dataset %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset %>%
   filter(Class == "Tool" | Class == "Core-Tool", Blank == "Blade") %>%
-  tabyl(Spit, Technology) %>%
+  tabyl(`Sub-layer`, Technology) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -483,7 +500,7 @@ Dataset %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset %>%
   filter(Class == "Tool" | Class == "Core-Tool", Blank == "Flake") %>%
-  tabyl(Spit, Technology) %>%
+  tabyl(`Sub-layer`, Technology) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -503,7 +520,7 @@ Dataset %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset_cores %>%
   filter(Carinated_y.n == "yes") %>%
-  tabyl(Spit, Core.blank) %>%
+  tabyl(`Sub-layer`, Core.blank) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -522,7 +539,7 @@ Dataset_cores %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset_cores %>%
   filter(Carinated_y.n == "yes") %>%
-  tabyl(Spit, Striking.platform) %>%
+  tabyl(`Sub-layer`, Striking.platform) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -541,7 +558,7 @@ Dataset_cores %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset_cores %>%
   filter(Carinated_y.n == "yes") %>%
-  tabyl(Spit, Reduction.pattern) %>%
+  tabyl(`Sub-layer`, Reduction.pattern) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -561,7 +578,7 @@ Dataset_cores %>%
 Dataset_cores %>%
   filter(Core.classification == "Bipolar") %>%
   dplyr::rename(`Number of platforms` = Platform.number) %>%
-  tabyl(Spit, `Number of platforms`) %>%
+  tabyl(`Sub-layer`, `Number of platforms`) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -580,8 +597,8 @@ Dataset_cores %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset_cores %>%
   filter(Core.classification != "Tested" & Core.classification != "Shatter", Laminar_y.n == "no") %>%
-  mutate(Core.classification = recode(Core.classification, `Platform flake` = "Platform")) %>%
-    mutate(Cortex = recode(Cortex, `0` = "0%")) %>%
+  mutate(Core.classification = dplyr::recode(Core.classification, `Platform flake` = "Platform")) %>%
+    mutate(Cortex = dplyr::recode(Cortex, `0` = "0%")) %>%
   mutate(Core.classification = fct_relevel(Core.classification, "Bipolar", "Multidirectional", "Platform", "Parallel", "Inclined")) %>%
   dplyr::rename(`Core type` = Core.classification) %>%
   tabyl(Cortex, `Core type`) %>%
@@ -595,7 +612,7 @@ Dataset_cores %>%
   set_table_properties(layout = "autofit") %>%
   autofit()
 ```
-  **Table S13.** Percentage of cortex coverage recorded on bipolar and flake cores, considering all spits as a single assemblage. Percentages are provided in brackets.
+  **Table S13.** Percentage of cortex coverage recorded on bipolar and flake cores, considering all sub-layers as a single assemblage. Percentages are provided in brackets.
 
 <br>
 
@@ -604,7 +621,7 @@ Dataset_cores %>%
 Dataset_cores %>%
   filter(Core.classification == "Bipolar") %>%
   dplyr::rename(`Blank production` = Blank.production) %>%
-  tabyl(`Blank production`, Spit) %>%
+  tabyl(`Blank production`, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%  
   adorn_percentages("col") %>%
@@ -624,7 +641,7 @@ Dataset_cores %>%
 Dataset %>%
   filter(Class == "Blank", Blank == "Bladelet" | Blank == "Flakelet", Preservation == "Complete") %>%
   dplyr::rename(`Raw material` = Raw.material) %>%
-  tabyl(`Raw material`, Spit) %>%
+  tabyl(`Raw material`, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%
   adorn_percentages("col") %>%
@@ -645,7 +662,7 @@ Dataset %>%
   filter(Blank =="Bladelet" | Blank == "Flakelet",
            Preservation == "Complete",
            Class == "Blank") %>%
-  group_by(Spit) %>%
+  group_by(`Sub-layer`) %>%
   get_summary_stats(Length, Width, Thickness, show = c("mean", "sd", "min", "median", "max")) %>%
   flextable() %>%
   theme_vanilla() %>%
@@ -676,7 +693,7 @@ species_table <- flextable(species_data) %>%
 
 species_table
 ```
-  **Table S17.** Overview of the specimens characterized by evidence of human perforation recovered in the Aurignacian spits AU13–AU10 at Grotta della Cala. Percentages are reported in brackets.
+  **Table S17.** Overview of the specimens characterized by evidence of human perforation recovered across AU13–AU10 at Grotta della Cala. Percentages are reported in brackets.
 
 <br>
 
@@ -688,10 +705,36 @@ Borgia V., Boschin F. & Ronchitelli A. (2016) Bone and antler working at Grotta 
 
 Boscato P., Ronchitelli A. & Wierer U. (1997) Il Gravettiano antico della grotta della Cala a Marina di Camerota, paletnologia e ambiente. Rivista di Scienze Preistoriche, 48: 97-183.
 
+Chiotti L. (2000) Dufour bladelets and Aurignacian endscrapers (carinate and nose-ended) from Level 8 of abri Pataud, Les Eyzies-de-Tayac, Dordogne. Anthropologie, 104: 239-263
+
+Conard N.J., Soressi M., Parkington J.E., Wurz S. & Yates R. (2004) A unified lithic taxonomy based on patterns of core reduction. South African Archaeological Bulletin, 59: 12-16
+
+de Sonneville-Bordes D. (1960) Le Paléolithique supérieur en Périgord. Delmas, Bordeaux
+
+Demars P.-Y. & Laurent P. (1992) Types d’outils lithiques du Paléolithique supérieur en Europe. Cahiers du Quaternaire, vol 14. CNRS, Paris
+
+Falcucci A. & Peresani M. (2018) Protoaurignacian Core Reduction Procedures: Blade and Bladelet Technologies at Fumane Cave. Lithic Technology 43: 125-140. doi:10.1080/01977261.2018.1439681
+
+Falcucci A., Arrighi S., Spagnolo V., Rossini M., Higgins O.A., Muttillo B., Martini I., Crezzini J., Boschin F., Ronchitelli A. & Moroni A. (2024) A pre-Campanian Ignimbrite techno-cultural shift in the Aurignacian sequence of Grotta di Castelcivita, southern Italy. Scientific Reports, 14: 12783. doi:10.1038/s41598-024-59896-6
+
 Heřt J., Fiala P. & Petrtýl M. (1994) Osteon orientation of the diaphysis of the long bones in man. Bone, 15: 269-277. doi:https://doi.org/10.1016/8756-3282(94)90288-7
+
+Le Brun-Ricalens F. & Brou L. (2003) Burins carénés-nucléus à lamelles : identification d'une chaîne opératoire particulière à Thèmes (Yonne) et implications. Bulletin de la Société préhistorique franĉaise, 100: 67-83. doi:10.3406/bspf.2003.12793
+
+Le Brun-Ricalens F. (2005) Chronique d'une reconnaissance attendue. Outils "carénés", outils "nucléiformes": nucléus à lamelles. Bilan après un siècle de recherches typologiques, technologiques et tracéologiques. In F. Le Brun-Ricalens (ed.): Productions lamellaires attribuées à l’Aurignacien. MNHA, Luxembourg.
+
+Lombao D., Falcucci A., Moos E. & Peresani M. (2023) Unravelling technological behaviors through core reduction intensity. The case of the early Protoaurignacian assemblage from Fumane Cave. Journal of Archaeological Science, 160: 105889. doi:https://doi.org/10.1016/j.jas.2023.105889
 
 Maggiano I.S., Maggiano C.M., Clement J.G., Thomas C.D.L., Carter Y. & Cooper D.M.L. (2016) Three-dimensional reconstruction of Haversian systems in human cortical bone using synchrotron radiation-based micro-CT: morphology and quantification of branching and transverse connections across age. Journal of Anatomy, 228: 719-732. doi:https://doi.org/10.1111/joa.12430
 
 Mancini L., Dreossi D., Fava C., Sodini N., Tromba G., Faretto S. & Montanari F. (2007) TOMOLAB, The new X-ray microtomography facility @ELETTRA. Elettra Highlights, 6: 128-129.
 
+Moroni A., Ronchitelli A., Arrighi S., Aureli D., Bailey S., Boscato P., Boschin F., Capecchi G., Crezzini J., Douka K., Marciani G., Panetta D., Ranaldo F., S. R., Scaramucci S., Spagnolo V., Benazzi S. & Gambassini P. (2018) Grotta del Cavallo (Apulia – Southern Italy). The Uluzzian in the mirror. Journal of Anthropological Sciences, 96: 1-36. doi:doi 10.4436/jass.96004
+
 Skedros J.G., Keenan K.E., Cooper D.M.L. & Bloebaum R.D. (2014) Histocompositional organization and toughening mechanisms in antler. Journal of Structural Biology, 187: 129-148. doi:https://doi.org/10.1016/j.jsb.2014.06.004
+
+Tafelmaier Y. (2017) Technological variability at the beginning of the Aurignacian in northern Spain. Implications for the Proto- and early Aurignacian distinction. Wissenschaftliche Schriften des Neanderthal Museums, Mettmann
+
+Tixier J. (1963) Typologie de l’Epipaléolithique du Maghreb vol 2. Mémoires du Centre de Recherches anthropologiques et préhistoriques et ethnographiques, Paris
+
+Zwyns N. (2012) Laminar technology and the onset of the Upper Paleolithic in the Altai, Siberia. Leiden University Press, Leiden

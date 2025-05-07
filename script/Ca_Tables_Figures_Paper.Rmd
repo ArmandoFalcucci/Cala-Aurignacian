@@ -39,15 +39,16 @@ library(scales)
 library(cowplot)
 library(ggpubr)
 library(extrafont)
+library(patchwork)
 
 Dataset <- readr::read_csv(file = "../data/Ca_Dataset_complete.csv", col_names = TRUE,
                            col_types = readr::cols(
-                             Spit = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
+                             `Sub-layer` = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
                            )))
 
 Dataset_cores <- readr::read_csv(file = "../data/Ca_Dataset_cores.csv", col_names = TRUE,
                            col_types = readr::cols(
-                             Spit = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
+                             `Sub-layer` = readr::col_factor(levels = c("AU10", "AU11", "AU12", "AU13")
                            )))
 
 comparison <- list(c("AU13", "AU12"), c("AU13", "AU11"), c("AU13", "AU10"), c("AU12", "AU11"), c("AU12", "AU10"), c("AU11", "AU10"))
@@ -61,7 +62,7 @@ comparison <- list(c("AU13", "AU12"), c("AU13", "AU11"), c("AU13", "AU10"), c("A
 Dataset %>%
   mutate(Class = fct_relevel(Class, "Core", "Core-Tool", "Blank", "Tool", "Pebble")) %>%
   arrange(Class) %>%
-  tabyl(Spit, Class) %>%
+  tabyl(`Sub-layer`, Class) %>%
   adorn_totals("col") %>%
   adorn_totals("row") %>%
   adorn_percentages("row") %>%
@@ -77,7 +78,7 @@ Dataset %>%
 ```{r, echo=FALSE, warning=FALSE}
 Dataset %>%
   filter(Class == "Tool" | Class == "Core-Tool") %>%
-  tabyl(Typology.new, Spit) %>%
+  tabyl(Typology.new, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%
   adorn_percentages("col") %>%
@@ -95,7 +96,7 @@ Dataset %>%
 Dataset_cores %>%
   filter(Laminar_y.n == "yes") %>%
   mutate(Core.classification.3 = fct_relevel(Core.classification.3, "Initial", "Carinated endscraper", "Carinated core", "Carinated burin", "Burin core", "Narrow-sided", "Semi-circumferential", "Wide-faced", "Multi-platform", "Shatter laminar")) %>%
-  tabyl(Core.classification.3, Spit) %>%
+  tabyl(Core.classification.3, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%
   adorn_percentages("col") %>%
@@ -106,7 +107,6 @@ Dataset_cores %>%
   kable_classic_2(lightable_options = "striped", full_width = F)
 ```
 
-
 ### Table 4
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -114,7 +114,7 @@ Dataset_cores %>%
   filter(Laminar_y.n == "no") %>%
   mutate(Core.classification.3 = recode(Core.classification.3, Discoid = "Inclined")) %>%
   mutate(Core.classification.3 = fct_relevel(Core.classification.3, "Bipolar", "Multidirectional", "Platform flake", "Parallel", "Inclined", "Shatter", "Tested")) %>%
-  tabyl(Core.classification.3, Spit) %>%
+  tabyl(Core.classification.3, `Sub-layer`) %>%
   adorn_totals("row") %>%
   adorn_totals("col") %>%
   adorn_percentages("col") %>%
@@ -127,24 +127,24 @@ Dataset_cores %>%
 
 ## Figures
 
-### Figure 6
+### Figure 7
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 bladelets_complete <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete") %>%
-  select(ID, Spit, Class, Length) %>%
+  select(ID, `Sub-layer`, Class, Length) %>%
   mutate(Class = recode(Class, Blank = "Bladelet", Tool = "Bladelet"))
 
 
 flak_surf_lenght_carinated <- Dataset_cores %>%
   filter(Core.classification == "Carinated") %>%
-  select(ID, Spit, Core.classification, Flaking.surface.length) %>%
+  select(ID, `Sub-layer`, Core.classification, Flaking.surface.length) %>%
   dplyr::rename(Class = Core.classification, Length = Flaking.surface.length)
 
 flak_surf_lenght_platform <- Dataset_cores %>%
   filter(Core.classification != "Carinated", Laminar_y.n == "yes", Core.classification != "Shatter laminar") %>%
-  select(ID, Spit, Core.classification, Flaking.surface.length) %>%
+  select(ID, `Sub-layer`, Core.classification, Flaking.surface.length) %>%
   dplyr::rename(Class = Core.classification, Length = Flaking.surface.length) %>%
   mutate(Class = recode(Class, Initial = "Platform", `Narrow-sided` = "Platform", `Burin core` = "Platform", `Wide-faced` = "Platform", `Semi-circumferential` = "Platform", `Multi-platform` = "Platform"))
 
@@ -155,7 +155,7 @@ comparison_bladelet_carinated <- full_join(comparison_bladelet_carinated, flak_s
 ```
 ```{r, echo=FALSE, warning=FALSE, fig.align='center'}
 comparison_bladelet_carinated.fig <- comparison_bladelet_carinated %>%
-  ggplot(aes(x = Spit, y = Length)) +
+  ggplot(aes(x = `Sub-layer`, y = Length)) +
   geom_boxplot(aes(fill = Class), alpha = 0.7) +  # Boxplot with alpha transparency
   scale_fill_manual(labels = c("Bladelet (n = 417)", "Carinated core (n = 112)", "Platform core (n = 30)"), 
                     values = c("#1f77b4", "#9467bd", "#8c564b")) +  # Boxplot colors
@@ -181,8 +181,8 @@ bladelet.length <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete",
          Class == "Blank") %>%
-  group_by(Spit) %>%
-  ggplot(aes(x = Spit, y = Length)) +
+  group_by(`Sub-layer`) %>%
+  ggplot(aes(x = `Sub-layer`, y = Length)) +
   geom_boxplot(fill = "#1f77b4", alpha = 0.7) +  # Use a muted blue for the boxplot
   stat_compare_means(label.y = 40.5, label.x = 1.2) +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), color = "#1f77b4", alpha = 0.5, size = 0.7) +  # Same color as boxplot
@@ -198,8 +198,8 @@ bladelet.width <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete",
          Class == "Blank") %>%
-  group_by(Spit) %>%
-  ggplot(aes(x = Spit, y = Width)) +
+  group_by(`Sub-layer`) %>%
+  ggplot(aes(x = `Sub-layer`, y = Width)) +
   geom_boxplot(fill = "#ff7f0e", alpha = 0.7) +  # Use muted orange for the boxplot
   stat_compare_means(label.y = 13, label.x = 1.2) +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), color = "#ff7f0e", alpha = 0.5, size = 0.7) +  # Same color as boxplot
@@ -215,8 +215,8 @@ bladelet.thickness <- Dataset %>%
   filter(Blank == "Bladelet" | Blank == "Flakelet",
          Preservation == "Complete",
          Class == "Blank") %>%
-  group_by(Spit) %>%
-  ggplot(aes(x = Spit, y = Thickness)) +
+  group_by(`Sub-layer`) %>%
+  ggplot(aes(x = `Sub-layer`, y = Thickness)) +
   geom_boxplot(fill = "#2ca02c", alpha = 0.7) +  # Use muted green for the boxplot
   stat_compare_means(label.y = 10, label.x = 1.2) +
   geom_jitter(shape = 16, position = position_jitter(width = 0.2), color = "#2ca02c", alpha = 0.5, size = 0.7) +  # Same color as boxplot
@@ -229,10 +229,10 @@ bladelet.thickness <- Dataset %>%
 
 
 # Combine the plots with manual labels using patchwork syntax
-Figure_6 <- (comparison_bladelet_carinated.fig) / 
+Figure_7 <- (comparison_bladelet_carinated.fig) / 
             (bladelet.length + bladelet.width + bladelet.thickness)
 
-Figure_6
+Figure_7
 
-ggsave("../output/figures/Figure_6.tiff", plot = Figure_6, width = 10, height = 7.5, units = "in", dpi = 300)
+ggsave("../output/figures/Figure_7.tiff", plot = Figure_7, width = 10, height = 7.5, units = "in", dpi = 300)
 ```

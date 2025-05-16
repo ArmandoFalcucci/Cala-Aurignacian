@@ -8,7 +8,7 @@ The content available at the provided Zenodo DOI reproduces the results as docum
 
 [![ORCiD](https://img.shields.io/badge/ORCiD-0000--0002--3255--1005-green.svg)](https://orcid.org/0000-0002-3255-1005) **Armando Falcucci** (<armando.falcucci@uni-tuebingen.de>)
 
-### Published Paper:
+### Paper in preparation:
 
 **Armando Falcucci, Keiko Kitagawa, Luc Doyon, Laura Tassoni, Tom Higham, Clarissa Domenici, Diego Dreossi, Jacopo Crezzini, Matteo Rossini, Stefano Benazzi, Ivan Martini, Francesco Boschin, Vincenzo Spagnolo, Adriana Moroni.** *Revisiting the Early Aurignacian in Italy: New Insights from Grotta della Cala.* _Journal Name, Volume Number, Page Numbers_ (in preparation). DOI: [Insert DOI]
 
